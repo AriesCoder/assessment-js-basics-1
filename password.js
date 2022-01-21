@@ -13,16 +13,24 @@ reader.question("Please enter a password to validate: ", function(input){
     if(password.length >= 10){
         if(password.indexOf(' ') >= 0){
             console.log("Failure! Please type a password without the white space(s)")
+            console.log(`Your password is ${password}`)
         }else{
-        console.log("Success!")
+            console.log("Success!")
+            console.log(`Your password is ${password}`)
         }
     }
-    else if (password.indexOf(' ') >= 0){
-        console.log("Failure! Please type a password with at least 10 characters and no the white space(s)")
+    else if(password.length > 0){
+        if (password.indexOf(' ') >= 0){
+            console.log("Failure! Please type a password with at least 10 characters and no the white space(s)")
+            console.log(`Your password is ${password}`)
+        }else{
+            console.log('Failure! The password should have at least 10 characters')
+            console.log(`Your password is ${password}`)
+        }
     }
     else{
-        console.log('Failure! The password should have at least 10 characters')
-        }
+        console.log("Failure! Please type a password to validate")
+    }
 
     reader.close()
 })
